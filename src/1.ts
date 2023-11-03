@@ -5,15 +5,39 @@
 */
 
 class Student {
-  public name: string;
-  public age: number;
-  public grade: string;
-
-  constructor(name: string, age: number, grade: string) {
+  constructor(public name: string, private age: number, private grade: string) {
     this.name = name;
     this.age = age;
     this.grade = grade;
   }
+
+  showName() {
+    console.log("name", this.name);
+  }
+  showAge() {
+    console.log("age", this.age);
+  }
+  showGrade() {
+    console.log("grade", this.grade);
+  }
 }
 
-export {};
+// ============================================
+const student = new Student("Liza", 44, "rrhr");
+console.log("student", student);
+
+student.showName();
+student.showAge();
+
+const studentCopy = {
+  name: "John",
+  age: 22,
+  grade: "ssss",
+  showName: student.showName,
+  showAge: student.showAge,
+  showGrade: student.showGrade,
+};
+console.log("studentCopy", studentCopy);
+studentCopy.showName();
+studentCopy.showAge();
+studentCopy.showGrade();
