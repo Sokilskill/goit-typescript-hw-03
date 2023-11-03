@@ -5,19 +5,19 @@
 */
 
 class Student {
-  constructor(public name: string, private age: number, private grade: string) {
-    this.name = name;
-    this.age = age;
-    this.grade = grade;
-  }
+  constructor(
+    public name: string,
+    private age: number,
+    private grade: string
+  ) {}
 
-  showName() {
+  showName(): void {
     console.log("name", this.name);
   }
-  showAge() {
+  showAge(): void {
     console.log("age", this.age);
   }
-  showGrade() {
+  showGrade(): void {
     console.log("grade", this.grade);
   }
 }
